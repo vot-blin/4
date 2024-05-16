@@ -14,14 +14,9 @@ model.compile(optimizer='adam',
 history = model.fit(x_train, y_train, epochs=5, verbose=1)
 test_loss, test_acc = model.evaluate(x_test, y_test)
 print(f'Точность на тестовом наборе: {test_acc * 100:.2f}%')
-import sys
-import matplotlib
-matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 plt.plot(history.history['accuracy'])
 plt.title('Кривая обучения')
 plt.xlabel('Эпоха')
 plt.ylabel('Точность')
 plt.show()
-plt.savefig(sys.stdout.buffer)
-sys.stdout.flush()
